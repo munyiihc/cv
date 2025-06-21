@@ -391,3 +391,96 @@ footer a:hover {
 #language-selector button:focus {
   outline: none; /* Quitar el borde de enfoque */
 }
+/* ... (todo tu código anterior sin cambios) ... */
+
+/* =============================
+   RESPONSIVE PARA MÓVILES
+============================= */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 0.95rem;
+  }
+
+  #intro {
+    height: 100vh;
+  }
+
+  .intro-content {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .nombre {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  #enter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .card-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    padding: 1.5rem;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .card-content {
+    font-size: 1rem;
+    padding: 0 0.2rem;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+  }
+
+  .card h2,
+  .card.active h2 {
+    font-size: 1.5rem;
+  }
+
+  .card ul li {
+    font-size: 1rem;
+  }
+
+  .card-content img {
+    max-width: 100%;
+  }
+
+  #back-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    margin: 1rem auto;
+    display: block;
+  }
+
+  footer {
+    font-size: 0.75rem;
+    padding: 1rem 0.5rem;
+  }
+
+  #language-selector {
+    top: 10px;
+    right: 10px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #language-selector button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
