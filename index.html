@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marta Muñoz Morcillo | CV Interactivo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="language-selector">
+  <button onclick="cambiarIdioma('es')">Español</button>
+  <button onclick="cambiarIdioma('en')">English</button>
+</div>
+
+  <!-- Video de introducción -->
+  <div id="intro">
+    <video autoplay muted loop id="video-bg">
+      <source src="videos/video1.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+    <div class="intro-content">
+      <h1 id="nombre">Marta Muñoz</h1>
+      <p id="subtitle">Desarrolladora Full Stack</p>
+      <button id="enter-btn">Conóceme más</button>
+    </div>
+  </div>
+
+  <!-- Contenido de las tarjetas -->
+  <div id="main-cards" class="hidden">
+    <div class="video-bg-container">
+      <video autoplay muted loop playsinline> 
+      <source src="videos/video1.mp4" type="video/mp4"> Tu navegador no soporta videos HTML5.</video>
+    </div>
+
+    <div class="card-grid">
+      <div class="card" data-section="perfil">
+        <h2 id="perfil-title">Perfil Profesional</h2>
+        <div class="card-content">
+          <p id="perfil-content">Soy una desarrolladora full-stack en formación, autodidacta y apasionada por la tecnología. Empecé en este mundo como un hobby, pero pronto descubrí que era mi vocación. Hasta que no encuentro la solución, no paro. Me impulsa la curiosidad por entender cómo funcionan las cosas por dentro y encontrar soluciones innovadoras a cada desafío. Trabajo principalmente con HTML, CSS, JavaScript y Python, pero siempre estoy aprendiendo nuevas herramientas y frameworks para ofrecer las mejores soluciones. Me apasiona tanto el desarrollo frontend como backend, y estoy en constante exploración de nuevas tecnologías.</p>
+          <p id="perfil-content2">Mi objetivo es crear proyectos funcionales, escalables y de calidad que no solo cumplan con los requerimientos, sino que también ofrezcan una experiencia de usuario única. Me encanta trabajar mano a mano con los clientes para asegurarme de que sus necesidades se traduzcan de manera efectiva en código limpio y bien estructurado. Soy una persona con gran capacidad de adaptación, organización y trabajo en equipo, siempre dispuesta a afrontar nuevos retos y a seguir aprendiendo.</p>
+          <p id="perfil-content3">Cada proyecto es una oportunidad para crecer y mejorar. Si buscas a alguien comprometido, creativo, con enfoque en resultados y con una actitud constante de mejora, estaré encantada de ayudarte a materializar tu idea. Estoy lista para aportar mi energía y pasión a tu proyecto, asegurando que cada detalle sea ejecutado con precisión.</p>
+        </div>
+        <span class="click-text">Haz clic para ver más detalles</span>
+      </div>
+      <div class="card" data-section="proyectos">
+        <h2 id="proyectos-title">Proyectos Destacados</h2>
+        <div class="card-content">
+          <ul>
+            <li><strong>🛒 Producto Virtual:</strong> Página web que simula un producto a la venta en una tienda virtual. Desarrollada con HTML y CSS, diseñada para practicar la presentación de productos, el diseño de una página de producto y la estructura de una tienda en línea responsiva. <br><a href="https://phoenixgabba.github.io/Producto/" target="_blank">Ver proyecto</a> <br> 
+              <img src="img/Producto.jpeg" alt="Miniatura tienda virtual" style="margin-top: 10px; max-width: 300px; border-radius: 10px;">
+            </li>
+            <li><strong>🛍️ Página de Inicio de Shopify:</strong> Simulación de la página de inicio de una tienda en línea basada en Shopify. Creada con HTML y CSS, esta página imita el diseño de una tienda en línea, con una estructura clara, navegación intuitiva y una presentación visual atractiva, ideal para practicar la maquetación de tiendas virtuales responsivas. <br><a href="https://phoenixgabba.github.io/PaginaShopify/" target="_blank">Ver proyecto</a> <br> 
+              <img src="img/Pagina Inicio Shopify.jpg" alt="Miniatura página de inicio de Shopify" style="margin-top: 10px; max-width: 300px; border-radius: 10px;">
+            </li>
+            <li><strong>📓 Generador de Excusas:</strong> Aplicación web simple en JavaScript para generar excusas aleatorias y divertidas.  <br><a href="https://phoenixgabba.github.io/Excuse-Generator/" target="_blank">Ver proyecto</a><br>
+              <img src="img/Generador de Excusas.jpeg" alt="Miniatura excusas">
+            </li>
+            <li><strong>🔤 Postcard virtual:</strong> Postcard digital personalizable.<br><a href="https://phoenixgabba.github.io/postcard/" target="_blank">Ver proyecto</a><br>
+              <img src="img/postcard.jpeg" alt="Miniatura postcard">
+            </li>
+            <li><strong>📄 CV Básico:</strong> Un currículum sencillo realizado con HTML y CSS, diseñado para mostrar de manera clara y funcional la información esencial como datos personales, experiencia laboral y formación. <br><a href="https://phoenixgabba.github.io/CV-basico/" target="_blank">Ver proyecto</a> <br> 
+                  <img src="img/CvBasico.jpeg" alt="Miniatura CV Básico" style="margin-top: 10px; max-width: 300px; border-radius: 10px;">
+                </li>
+            <li><strong>📄 CV Elegante:</strong> Un CV con un diseño más estilizado y moderno, utilizando HTML y CSS, con secciones bien diferenciadas, colores llamativos y una estructura adaptable a diferentes dispositivos. <br><a href="https://phoenixgabba.github.io/cv-online/" target="_blank">Ver proyecto</a> <br> 
+                  <img src="img/CvOnline.jpeg" alt="Miniatura CV Elegante" style="margin-top: 10px; max-width: 300px; border-radius: 10px;">
+                </li>
+            <li><strong>📄 CV Profesional:</strong> Un currículum de alto nivel con un diseño sofisticado, utilizando técnicas avanzadas de HTML y CSS. Presenta animaciones sutiles y una estructura que resalta la experiencia y habilidades profesionales de manera atractiva. <br><a href="https://phoenixgabba.github.io/cv-online2/" target="_blank">Ver proyecto</a> <br> 
+                  <img src="img/CvProfesional.jpeg" alt="Miniatura CV Profesional" style="margin-top: 10px; max-width: 300px; border-radius: 10px;">
+                </li>
+            <li><strong>📸 Feed:</strong> Página web que simula un feed usando HTML y CSS. Diseñada con una estructura clara y estilizada para practicar maquetación y estilos responsivos.  <br><a href="https://phoenixgabba.github.io/Feed/" target="_blank">Ver proyecto</a> <br> 
+              <img src="img/Feed.jpeg" alt="Miniatura feed de Instagram" style="margin-top: 10px; max-width: 300px; border-radius: 10px;">
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" data-section="habilidades">
+        <h2 id="habilidades-title">Habilidades y Formación</h2>
+        <div class="card-content">
+          <p id="habilidades-content">A lo largo de mi formación y experiencia, he adquirido una sólida base en desarrollo web full-stack. Mi enfoque autodidacta me ha permitido aprender rápidamente nuevas tecnologías, y siempre estoy en busca de mejorar mis habilidades para crear soluciones más eficientes y de mayor impacto.</p>
+          <p id="habilidades-content2">Estas son algunas de mis principales habilidades y tecnologías que domino:</p>
+          <ul>
+            <li><strong>Lenguajes de Programación:</strong> 
+              <ul>
+                <li><strong>HTML5 & CSS3:</strong> Diseño y estructuración de páginas web semánticas, adaptables y accesibles. Trabajo con frameworks como Bootstrap y Sass para mejorar la eficiencia y la estética.</li>
+                <li><strong>JavaScript:</strong> Desarrollo de interfaces interactivas utilizando ES6, DOM Manipulation y frameworks como React.js para aplicaciones dinámicas.</li>
+                <li><strong>Python:</strong> Experiencia en scripting, automatización de tareas y desarrollo backend. Utilizo Python para proyectos de desarrollo web, data analysis y automatización.</li>
+              </ul>
+            </li>
+            <li><strong>Frameworks y Librerías:</strong>
+              <ul>
+                <li><strong>React.js:</strong> Desarrollo de aplicaciones web interactivas y componentes reutilizables, optimizando la experiencia del usuario.</li>
+                <li><strong>Flask & Django:</strong> Desarrollo backend con Python para crear APIs RESTful, gestionar bases de datos y manejar autenticaciones de usuario.</li>
+                <li><strong>Node.js:</strong> Uso de JavaScript para desarrollo backend y creación de servidores rápidos y escalables.</li>
+              </ul>
+            </li>
+            <li><strong>Bases de Datos:</strong>
+              <ul>
+                <li><strong>MySQL & PostgreSQL:</strong> Diseño y gestión de bases de datos relacionales, optimización de consultas y almacenamiento eficiente de datos.</li>
+                <li><strong>MongoDB:</strong> Base de datos NoSQL para proyectos con grandes volúmenes de datos no estructurados, permitiendo escalabilidad y flexibilidad.</li>
+              </ul>
+            </li>
+            <li><strong>Control de versiones:</strong> Git, GitHub, GitLab. Trabajo en equipo y manejo de versiones para proyectos colaborativos, asegurando la integridad del código y el flujo de trabajo ágil.</li>
+            <li><strong>Otras herramientas:</strong> Docker para contenedores, Postman para testing de APIs, y Figma para prototipos de interfaces de usuario (UI).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" data-section="extras">
+        <h2 id="contacto-title">Idiomas y Contacto</h2>
+        <div class="card-content">
+          <p id="contacto-content">La comunicación efectiva es una de mis fortalezas, lo que me permite colaborar con equipos globales y entender las necesidades de mis clientes, independientemente de su ubicación. Hablo varios idiomas y estoy acostumbrada a trabajar en entornos multilingües, lo cual facilita la interacción con clientes y equipos de diferentes partes del mundo.</p>
+          <p><strong>Idiomas:</strong></p>
+          <ul>
+            <li><strong>Español:</strong> Nativo. Comunicación fluida tanto de forma escrita como hablada. Me permite gestionar proyectos y colaborar con equipos de habla hispana de forma efectiva.</li>
+            <li><strong>Catalán:</strong> Nativo. Habilidad para comunicarme en ambos idiomas, lo que me da flexibilidad en proyectos en el mercado local.</li>
+            <li><strong>Inglés:</strong> Avanzado (técnico y comunicación escrita). Utilizo el inglés con fluidez para leer documentación técnica, trabajar en proyectos internacionales y comunicarme con clientes y equipos de diferentes países.</li>
+          </ul>
+          <p>Además, la fluidez en estos idiomas me permite comprender y producir documentación técnica en diferentes lenguajes, lo que es fundamental cuando se trabaja con tecnologías y estándares globales.</p>
+          <p>Si deseas ponerte en contacto conmigo o explorar posibles colaboraciones, no dudes en usar cualquiera de los siguientes métodos:</p>
+          <p>📞 <strong>Teléfono:</strong> 613164717 <br>
+            ✉️ <strong>Correo electrónico:</strong> <a href="mailto:munyii.hc@gmail.com">munyii.hc@gmail.com</a><br>
+            🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/marta-munoz" target="_blank">Ver perfil de LinkedIn</a><br>
+            🌐 <strong>Portfolio:</strong> <a href="https://marta-portfolio.com" target="_blank">Visitar portfolio online</a><br>
+            💼 <strong>GitHub:</strong> <a href="https://github.com/phoenixgabba" target="_blank">Ver mis repositorios</a><br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="detail-view" class="hidden">
+    <button id="back-btn">← Volver</button>
+    <div id="detail-content"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p id="footer-text">© 2025 Marta Muñoz Morcillo | 📍 Valencia, España | 🌐 Desarrolladora Full Stack</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+/* =============================
+   RESET & BASE GLOBAL
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* =============================
+   VIDEO DE INTRODUCCIÓN
+============================= */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 999;
+}
+
+#video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.4);
+}
+
+.intro-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  padding: 1rem;
+}
+
+.nombre {
+  font-size: 4rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ccc;
+  margin-top: 1rem;
+}
+
+/* =============================
+   BOTÓN DE ENTRADA
+============================= */
+#enter-btn {
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  background-color: #ffffff;
+  color: #121212;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 1.5s ease forwards;
+  animation-delay: 1.5s;
+}
+
+#enter-btn:hover {
+  background-color: #9f9f9f;
+  box-shadow: 0 10px 40px palegreen;
+}
+
+/* =============================
+   CONTENIDO CV
+============================= */
+#main-cards {
+  flex: 1;
+  padding: 2rem 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(79, 79, 79, 0.7); /* Fondo más oscuro */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Más sombra */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  cursor: pointer;
+  width: 90vw;
+  max-width: 1000px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: flex-start;
+  padding: 2rem 2rem 3rem 2rem;
+  cursor: pointer;
+}
+.card:hover:not(.active)::after {
+  content: "\f06e"; /* Código Unicode para el ícono del ojo */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 2rem;
+  color: palegreen;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: color 0.3s ease;
+  pointer-events: none; /* Asegura que el pseudo-elemento no interfiera con clics */
+}
+
+.card:hover {
+  background-color: #4e4e4e; /* Color ligeramente más oscuro */
+  color: #fff; /* Cambia el color del texto al pasar el mouse */
+  transform: translateY(0);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  cursor: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.woff2'), pointer; /* Cambia al cursor estándar de Font Awesome */
+}
+.card .click-text {
+  display: none; /* Ocultamos el texto, ya que no será necesario con el cambio de cursor */
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase; /* Letras en mayúsculas para mayor impacto */
+}
+.card.active h2 {
+  font-size: 2rem;
+  color: palegreen;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase; /* Letras en mayúsculas para mayor impacto */
+}
+
+.card-content {
+  font-size: 1.2rem;
+  color: #f0f0f0; /* Color del texto más claro */
+  display: none;
+  max-height: 0;
+  overflow-y: auto;
+  transition: max-height 0.5s ease;
+  padding: 0 0.5rem;
+}
+
+.card-content img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.card.active .card-content {
+  display: block;
+  max-height: 800px;
+}
+
+.card ul {
+  list-style-type: none;
+  margin-top: 1rem;
+}
+
+.card ul li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* Resaltar secciones dentro del contenido */
+.card-content strong {
+  font-weight: bold;
+  color: palegreen; /* Color dorado para resaltar texto clave */
+}
+
+/* Mejora de la visibilidad de los enlaces */
+.card-content a {
+  color: palegreen;
+  text-decoration: none;
+}
+
+.card-content a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* Animación de las tarjetas */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:nth-child(1) {
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.card.card:nth-child(1).active{
+  box-shadow: 1px 3px 5px 8px palegreen;
+}
+
+
+.card:nth-child(2) {
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.card.card:nth-child(2).active{
+  box-shadow: 1px 3px 5px 8px palegreen;
+}
+
+.card:nth-child(3) {
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.card.card:nth-child(3).active{
+  box-shadow: 1px 3px 5px 8px palegreen;
+}
+
+.card:nth-child(4) {
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.card.card:nth-child(4).active{
+  box-shadow: 1px 3px 5px 8px palegreen;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase; /* Letras en mayúsculas para mayor impacto */
+}
+
+/* =============================
+   RESALTAR TEXTO EN EL PERFIL
+============================= */
+.card-content strong {
+  font-weight: bold;
+  color: palegreen; /* Dorado para resaltar términos clave */
+}
+
+.card-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+}
+
+.card-content p span {
+  color: palegreen; /* Resaltado dorado para frases o palabras clave */
+  font-weight: bold;
+  font-style: italic; /* Un toque diferente para la frase destacada */
+}
+
+/* =============================
+   BOTÓN VOLVER
+============================= */
+#back-btn {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.2rem;
+  background-color: #ffffff;
+  color: #121212;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+
+#back-btn:hover {
+  background-color: #9f9f9f;
+  box-shadow: 0 10px 40px palegreen;
+}
+
+/* =============================
+   FOOTER (ajustado al final)
+============================= */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ccc;
+  border-top: 1px solid #333;
+  padding: 0.8rem 1rem;
+  margin-top: 2rem;
+  line-height: 1.4;
+  background-color: #121212;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   VIDEO DE FONDO DETRÁS DE TARJETAS
+================================ */
+.video-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa opaca */
+}
+
+.video-bg-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.4);
+}
+
+/* Selector de idioma - Estilo básico */
+#language-selector {
+  position: fixed; /* Fijo en la parte superior de la página */
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+#language-selector button {
+  background-color: #000000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  border: 2px solid #ffffff; /* Borde blanco*/
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+}
+
+#language-selector button:hover {
+  background-color: palegreen;
+  color: #000; /* Texto negro */
+}
+
+#language-selector button:focus {
+  outline: none; /* Quitar el borde de enfoque */
+}
